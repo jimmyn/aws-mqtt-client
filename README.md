@@ -20,7 +20,7 @@ const mqttClient = new AWSMqtt({
 	secretAccessKey: AWS_SECRET_ACCESS_KEY,
 	sessionToken: AWS_SESSION_TOKEN,
 	endpointAddress: AWS_IOT_ENDPOINT_HOST,
-  region: 'us-east-1'
+	region: 'us-east-1'
 });
 ````
 4.  Connect and recieve messages from your topic
