@@ -9,6 +9,14 @@
     "url": "git://github.com/jimmyn/aws-mqtt-client.git"
   },
   "bugs": "http://github.com/jimmyn/aws-mqtt-client/issues",
+  "keywords": [
+    "amazon",
+    "aws",
+    "iot",
+    "pub/sub",
+    "websocket",
+    "mqtt"
+  ],
   "dependencies": {
     "aws-signature-v4": "^1.0.1",
     "core-js": "^0.9.13",
