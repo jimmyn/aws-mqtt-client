@@ -40,5 +40,5 @@ mqttClient.publish(MQTT_TOPIC, message);
 ### Complete [MQTT.js API](https://github.com/mqttjs/MQTT.js#api)
 
 ## Credits
-Based on [Serverless JS-Webapp Pub/Sub with AWS IoT](http://stesie.github.io/2016/04/aws-iot-pubsub) article by [Stefan Siegl](https://github.com/stesie)
+Based on [Serverless JS-Webapp Pub/Sub with AWS IoT](http://stesie.github.io/2016/04/aws-iot-pubsub) article by [Stefan Siegl](https://github.com/stesie)  
 This library is a wrapper around [MQTT.js](https://github.com/mqttjs/MQTT.js) npm package.
