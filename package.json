@@ -1,0 +1,32 @@
+{
+  "name": "aws-mqtt-client",
+  "description": "",
+  "version": "0.0.1",
+  "author": "Dmitriy Nevzorov <jimmy.lugat@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jimmyn/aws-mqtt-client.git"
+  },
+  "bugs": "http://github.com/jimmyn/aws-mqtt-client/issues",
+  "dependencies": {
+    "aws-signature-v4": "^1.0.1",
+    "core-js": "^0.9.13",
+    "mqtt": "^1.12.0",
+    "websocket-stream": "^3.2.1"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "chai": "^3.5.0",
+    "chai-string": "^1.2.0",
+    "mocha": "^2.2.1"
+  },
+  "scripts": {
+    "compile": "babel -e -d lib/ src/",
+    "prepublish": "npm run compile",
+    "test": "mocha --recursive --require babelhook"
+  },
+  "main": "lib/index.js"
+}
