@@ -16,8 +16,9 @@ class AWSMqtt extends MqttClient {
         {
           key: options.accessKeyId,
           secret: options.secretAccessKey,
-          protocol: 'wss',
-          expires: options.expires || 15
+          region: options.region,
+          expires: options.expires || 15,
+          protocol: 'wss'
         }
       );
       if (options.sessionToken) {
