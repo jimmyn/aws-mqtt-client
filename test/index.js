@@ -3,6 +3,7 @@ import AWSMqtt from '../src';
 import MqttClient from 'mqtt/lib/client';
 import chai from 'chai';
 import chaiString from 'chai-string';
+import moment from 'moment';
 chai.use(chaiString);
 const expect = chai.expect;
 
@@ -28,7 +29,8 @@ describe("AWSMqtt", () => {
   });
 
   it("should contain correct amz credentials", () => {
-    expect(awsMqttClient.stream.socket.url).to.contain('X-Amz-Credential=ASIAJKQ5TEVEKOEAUXCQ%2F20160711%2Feu-west-1%2Fiotdevicegateway%2Faws4_request');
+    const date = moment().format('YYYYMMDD');
+    expect(awsMqttClient.stream.socket.url).to.contain(`X-Amz-Credential=ASIAJKQ5TEVEKOEAUXCQ%2F${date}%2Feu-west-1%2Fiotdevicegateway%2Faws4_request`);
   });
 
   it("should contain security token", () => {
