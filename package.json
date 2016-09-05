@@ -26,7 +26,7 @@
   "peerDependencies": {},
   "optionalDependencies": {},
   "devDependencies": {
-    "babel": "^6.5.2",
+    "babel-cli": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-register": "^6.14.0",
     "chai": "^3.5.0",
@@ -37,7 +37,7 @@
   "scripts": {
     "compile": "babel -e -d lib/ src/",
     "prepublish": "npm run compile",
-    "test": "mocha --recursive --require babelhook"
+    "test": "mocha --recursive --require babel-register"
   },
   "main": "lib/index.js"
 }
