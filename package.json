@@ -1,7 +1,7 @@
 {
   "name": "aws-mqtt-client",
   "description": "",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Dmitriy Nevzorov <jimmy.lugat@gmail.com>",
   "license": "MIT",
   "repository": {
