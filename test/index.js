@@ -16,12 +16,19 @@ describe("AWSMqtt", () => {
       secretAccessKey: 'NDHu8pMF7MusU5ObAXS3nHTZHBNg/1dz6J/TVjE6',
       sessionToken: 'FQoDYXdzEC4aDAXdeKfijZ+FZEDOwyKuAnvcowRhlgZjcsitQh5ICV+TBwrfd1K65A8rzWV6X7tR3nOJSq6YB/QQmWak7D4+7FXNiaLa2szf6YeOaSm6pb6gervq+vi/TJH4mQ38HXM0mHsceqmx28T3Hj7enqCNmEp8C/tIPRfnyQ0jhfvdS9FKoURKPgRU1m/1BZku0Q+tUirFZcHu8mCEjqAAUG3OWcfNaYyhMoYUnEPmQVBWKs2vYzgObC3sDxQq8glXSms5u8/djCWxM1bvpZbvQhll8QfSFUV0ov59DLz7CS51pomLGSkbEoJC5fb+v2KeGLLAbv3hwP6RfkRodjF/H0PkjHzVyfWry5xfbFaoi65eQ/xexBvvZf8NAYWZuNl7jnzAKVL4xIHZWKm/SeOmi/5+C07xm+kqeZJRNmaUeZtfKNa0jrwF',
       endpointAddress: 'bfurjhgcnbvcx.iot.eu-west-1.amazonaws.com',
-      region: 'eu-west-1'
+      region: 'eu-west-1',
+      reconnectPeriod: 60000,
+      connectTimeout: 60000
     })
   });
 
   it("should be an instance of MqttClient", () => {
     expect(awsMqttClient).instanceof(MqttClient);
+  });
+
+  it("should pass options to MqttClient", () => {
+    expect(awsMqttClient.options.reconnectPeriod).to.equal(60000);
+    expect(awsMqttClient.options.connectTimeout).to.equal(60000);
   });
 
   it("should contain correct url", () => {

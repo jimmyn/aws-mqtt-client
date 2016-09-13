@@ -6,26 +6,36 @@ import websocket from 'websocket-stream';
 
 class AWSMqtt extends MqttClient {
   constructor(options = {}) {
+    const {
+            endpointAddress,
+            accessKeyId,
+            secretAccessKey,
+            sessionToken,
+            region,
+            expires = 15,
+            wsOptions,
+            ...mqttOptions
+          } = options;
     super(() => {
       let url = v4.createPresignedURL(
         'GET',
-        options.endpointAddress,
+        endpointAddress,
         '/mqtt',
         'iotdevicegateway',
         crypto.createHash('sha256').update('', 'utf8').digest('hex'),
         {
-          key: options.accessKeyId,
-          secret: options.secretAccessKey,
-          region: options.region,
-          expires: options.expires || 15,
+          key: accessKeyId,
+          secret: secretAccessKey,
+          region,
+          expires,
           protocol: 'wss'
         }
       );
-      if (options.sessionToken) {
-        url += '&X-Amz-Security-Token=' + encodeURIComponent(options.sessionToken);
+      if (sessionToken) {
+        url += '&X-Amz-Security-Token=' + encodeURIComponent(sessionToken);
       }
-      return websocket(url, ['mqttv3.1'], options.wsOptions);
-    });
+      return websocket(url, ['mqttv3.1'], wsOptions);
+    }, mqttOptions);
   }
 }
 
