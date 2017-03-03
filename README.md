@@ -11,9 +11,9 @@ npm install aws-mqtt-client --save
 
 ## Basic usage
 
-1.  Create an IAM role and asign predefined `AWSIoTDataAccess` policy. (It is better to use [AWS Cognito](https://aws.amazon.com/cognito/) to provide temprerary credentiels for the front-end application, you can also customize policy to allow access only to user specific topics)
+1.  Create an IAM role and asign predefined `AWSIoTDataAccess` policy. (It is better to use [AWS Cognito](https://aws.amazon.com/cognito/) to provide temporary credentials for the front-end application, you can also customize policy to allow access only to user specific topics).
 2.  Run AWS CLI command `aws iot describe-endpoint` to get IoT endpoint url.
-3.  Create `mqttClient` with AWS credentials
+3.  Create `mqttClient` with AWS credentials.
 ````js
 const mqttClient = new AWSMqtt({
 	accessKeyId: AWS_ACCESS_KEY,
@@ -23,7 +23,7 @@ const mqttClient = new AWSMqtt({
 	region: 'us-east-1'
 });
 ````
-4.  Connect and recieve messages from your topic
+4.  Connect and receive messages from your topic.
 ````js
 mqttClient.on('connect', () => {
 	mqttClient.subscribe('test-topic');
@@ -33,7 +33,7 @@ mqttClient.on('message', (topic, message) => {
 	console.log(message.toString());
 });
 ````
-5.  Publish a message
+5.  Publish a message.
 ````js
 mqttClient.publish(MQTT_TOPIC, message);
 ````
@@ -41,5 +41,4 @@ mqttClient.publish(MQTT_TOPIC, message);
 ### Complete [MQTT.js API](https://github.com/mqttjs/MQTT.js#api)
 
 ## Credits
-Based on [Serverless JS-Webapp Pub/Sub with AWS IoT](http://stesie.github.io/2016/04/aws-iot-pubsub) article by [Stefan Siegl](https://github.com/stesie)  
-This library is a wrapper around [MQTT.js](https://github.com/mqttjs/MQTT.js) npm package.
+Based on [Serverless JS-Webapp Pub/Sub with AWS IoT](http://stesie.github.io/2016/04/aws-iot-pubsub) article by [Stefan Siegl](https://github.com/stesie). This library is a wrapper around [MQTT.js](https://github.com/mqttjs/MQTT.js) npm package.
