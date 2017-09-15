@@ -15,6 +15,8 @@ npm install aws-mqtt-client --save
 2.  Run AWS CLI command `aws iot describe-endpoint` to get IoT endpoint url.
 3.  Create `mqttClient` with AWS credentials.
 ````js
+import AWSMqtt from 'aws-mqtt-client';
+
 const mqttClient = new AWSMqtt({
 	accessKeyId: AWS_ACCESS_KEY,
 	secretAccessKey: AWS_SECRET_ACCESS_KEY,
