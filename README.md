@@ -6,7 +6,7 @@ Recently [AWS released support of WebSockets for IoT](https://aws.amazon.com/abo
 ## Installing it
 
 ````bash
-npm install aws-mqtt-client --save
+npm i aws-mqtt-client --save
 ````
 
 ## Basic usage
@@ -15,24 +15,24 @@ npm install aws-mqtt-client --save
 2.  Run AWS CLI command `aws iot describe-endpoint` to get IoT endpoint url.
 3.  Create `mqttClient` with AWS credentials.
 ````js
-import AWSMqtt from 'aws-mqtt-client';
+import AWSMqtt from "aws-mqtt-client";
 
 const mqttClient = new AWSMqtt({
-	accessKeyId: AWS_ACCESS_KEY,
-	secretAccessKey: AWS_SECRET_ACCESS_KEY,
-	sessionToken: AWS_SESSION_TOKEN,
-	endpointAddress: AWS_IOT_ENDPOINT_HOST,
-	region: 'us-east-1'
+  accessKeyId: AWS_ACCESS_KEY,
+  secretAccessKey: AWS_SECRET_ACCESS_KEY,
+  sessionToken: AWS_SESSION_TOKEN,
+  endpointAddress: AWS_IOT_ENDPOINT_HOST,
+  region: "us-east-1"
 });
 ````
 4.  Connect and receive messages from your topic.
 ````js
-mqttClient.on('connect', () => {
-	mqttClient.subscribe('test-topic');
-	console.log('connected to iot mqtt websocket');
+mqttClient.on("connect", () => {
+  mqttClient.subscribe("test-topic");
+  console.log("connected to iot mqtt websocket");
 });
-mqttClient.on('message', (topic, message) => {
-	console.log(message.toString());
+mqttClient.on("message", (topic, message) => {
+  console.log(message.toString());
 });
 ````
 5.  Publish a message.
