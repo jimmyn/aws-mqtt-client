@@ -20,7 +20,7 @@
   "dependencies": {
     "aws-signature-v4": "^1.0.1",
     "core-js": "^2.4.1",
-    "mqtt": "^1.14.1",
+    "mqtt": "^4.3.7",
     "websocket-stream": "^3.3.0"
   },
   "peerDependencies": {},
