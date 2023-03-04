@@ -30,7 +30,7 @@
     "babel-register": "^6.14.0",
     "chai": "^3.5.0",
     "chai-string": "^1.2.0",
-    "mocha": "^3.0.2",
+    "mocha": "^10.2.0",
     "moment": "^2.14.1"
   },
   "scripts": {
